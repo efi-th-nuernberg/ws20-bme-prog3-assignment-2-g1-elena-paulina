@@ -13,7 +13,10 @@ class TextFormatter {
 
 	public static void main(String[] args) {
 		TextFormatter formatter = new TextFormatter(30);
+<<<<<<< HEAD
 		formatter.printZeilenumbruch(TEXT);
+=======
+>>>>>>> 7d96228b0aa548ddea4e71c5aa34d86d1efd4b04
 		formatter.printLinks(TEXT);
 		formatter.printRechts(TEXT);
 		formatter.printBlock(TEXT);
@@ -49,12 +52,23 @@ class TextFormatter {
 		int count = 0;
 		String formatierterText = "";
 		aText = macheZeilenumbruch(aText);
+<<<<<<< HEAD
 		String[] lines = aText.split("\n");
 		count = ermittleLängsteZeile(count, lines);
 
 		for (String s : lines) {
 			s = s.trim();
 			int anzahlLeerzeichen = count - s.length();
+=======
+		// Array erstellen
+		String[] lines = aText.split("\n");
+		count = ermittleLängsteZeile(count, lines);
+
+		// alle anderen Zeilen vor Zeichen mit Leerzeichen füllen
+		for (String s : lines) {
+			s = s.trim(); // trim schneidet Leerzeichen r+l ab
+			int anzahlLeerzeichen = count - s.length(); // count - Inhalt
+>>>>>>> 7d96228b0aa548ddea4e71c5aa34d86d1efd4b04
 			String formatierteZeile = "";
 			for (int i = 0; i < anzahlLeerzeichen; i++) {
 				formatierteZeile += " ";
@@ -68,12 +82,23 @@ class TextFormatter {
 		int count = 0;
 		String formatierterText = "";
 		aText = macheZeilenumbruch(aText);
+<<<<<<< HEAD
 		String[] lines = aText.split("\n");
 		count = ermittleLängsteZeile(count, lines);
 
 		for (String s : lines) {
 			s = s.trim();
 			int anzahlLeerzeichen = count - s.length();
+=======
+		// Array erstellen
+		String[] lines = aText.split("\n");
+		count = ermittleLängsteZeile(count, lines);
+
+		// alle anderen Zeilen vor Zeichen mit Leerzeichen füllen
+		for (String s : lines) {
+			s = s.trim(); // trim schneidet Leerzeichen r+l ab
+			int anzahlLeerzeichen = count - s.length(); // count - Inhalt
+>>>>>>> 7d96228b0aa548ddea4e71c5aa34d86d1efd4b04
 			String formatierteZeile = "";
 			for (int i = 0; i < anzahlLeerzeichen; i++) {
 				formatierteZeile += " ";
@@ -87,12 +112,25 @@ class TextFormatter {
 		int count = 0;
 		String formatierterText = "";
 		aText = macheZeilenumbruch(aText);
+<<<<<<< HEAD
 		String[] lines = aText.split("\n");
 		count = ermittleLängsteZeile(count, lines);
 
 		for (String s : lines) {
 			s = s.trim();
 			int anzahlLeerzeichen = count - s.length();
+=======
+		// Array erstellen
+		String[] lines = aText.split("\n");
+		// Längste Zeile ermitteln
+		// Loop bis Ende erreicht -> for-each Schleife
+		count = ermittleLängsteZeile(count, lines);
+
+		// alle anderen Zeilen vor Zeichen mit Leerzeichen füllen
+		for (String s : lines) {
+			s = s.trim(); // trim schneidet Leerzeichen r+l ab
+			int anzahlLeerzeichen = count - s.length(); // count - Inhalt
+>>>>>>> 7d96228b0aa548ddea4e71c5aa34d86d1efd4b04
 			String formatierteZeile = "";
 			for (int i = 0; i < anzahlLeerzeichen; i++) {
 				formatierteZeile += " ";
@@ -103,6 +141,7 @@ class TextFormatter {
 		return formatierterText;
 	}
 
+<<<<<<< HEAD
 	private String macheZeilenumbruch(String aText) {
 		int length = this.maxLineLength;
 		String formatiert = "";
@@ -121,6 +160,8 @@ class TextFormatter {
 		return formatiert;
 	}
 
+=======
+>>>>>>> 7d96228b0aa548ddea4e71c5aa34d86d1efd4b04
 	private int ermittleLängsteZeile(int count, String[] lines) {
 		for (String s : lines) {
 			if (s.length() > count) {
@@ -141,6 +182,31 @@ class TextFormatter {
 		return zeile;
 	}
 
+<<<<<<< HEAD
+=======
+	private String macheZeilenumbruch(String aText) {
+		int length = this.maxLineLength;
+		String formatiert = "";
+		String s = ""; // Zwischenspeicher
+
+		// Splitte String nach x Zeichen
+		while (true) {
+			if (aText.length() > length) { // Text größer als 30?
+				s = aText.substring(0, length); // (0 - 30)
+				aText = aText.substring(length);
+				formatiert += s; // += = formatiert = formatiert + s
+				// Füge Zeilenumbruch hinzu
+				formatiert += "\n";
+			} else {
+				formatiert += aText;
+				break;
+			}
+		}
+		// Gebe zurück
+		return formatiert;
+	}
+
+>>>>>>> 7d96228b0aa548ddea4e71c5aa34d86d1efd4b04
 	// Getter und Setter
 	public int getMaxLineLength() {
 		return maxLineLength;
